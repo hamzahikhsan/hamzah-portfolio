@@ -12,8 +12,12 @@ export const Navbar: React.FC = () => {
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // 1:1 Won J You:
+  // Homepage (/) is accessed via the Brand Monogram on the left.
+  // The nav items are dedicated sub-pages: Life (/life), Loves (/loves), etc.
+  // None are highlighted by default on homepage.
   const navLinks = [
-    { href: "/", label: "Life" },
+    { href: "/life", label: "Life" },
     { href: "/loves", label: "Loves" },
     { href: "/work", label: "Works" },
     { href: "/thoughts", label: "Thoughts" },
@@ -23,7 +27,7 @@ export const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-colors duration-300">
       <div className="max-w-[1720px] mx-auto px-6 sm:px-12 py-5 sm:py-6 flex items-center justify-between">
-        {/* Brand Monogram Mark (Left) */}
+        {/* Brand Monogram Mark (Left) — click always returns to Home (/) */}
         <div className="pointer-events-auto">
           <Link
             href="/"
@@ -53,10 +57,10 @@ export const Navbar: React.FC = () => {
           onMouseLeave={() => setHoveredPath(null)}
         >
           {navLinks.map((link) => {
+            // Only active on exact route match; homepage (/) has no active item
             const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname?.startsWith(link.href);
+              pathname === link.href ||
+              (link.href !== "/" && pathname?.startsWith(link.href + "/"));
 
             const isHighlighted = hoveredPath ? hoveredPath === link.href : isActive;
 
