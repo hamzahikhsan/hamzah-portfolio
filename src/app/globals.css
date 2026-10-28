@@ -1,13 +1,57 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Right Grotesk';
+  src: url('/fonts/64491dbb5e51aea79ac708c1_PPRightGrotesk-TallBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/6460b533b2d9344aaa5a528c_NHaasGroteskDSPro-35XLt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/6449210ce4eda212258f26e2_NHaasGroteskDSPro-55Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  src: url('/fonts/64492102462df73ab01a3e7a_NHaasGroteskDSPro-65Md.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --canvas: #FFFFFF;
-  --canvas-subtle: #FBFBFB;
-  --ink: #111111;
-  --accent-red: #F10000;
-  --muted: #666666;
-  --border-light: #E5E5E5;
-  --border-dark: #111111;
+  --black: #000000;
+  --white: #FFFFFF;
+  --red: #F10000;
+  --bg-canvas: #000000;
+  --text-main: #FFFFFF;
+  --text-muted: #888888;
+  --stroke-outline: rgba(255, 255, 255, 0.85);
+  --cursor-color: #FFFFFF;
+}
+
+html.light {
+  --black: #FFFFFF;
+  --white: #000000;
+  --red: #F10000;
+  --bg-canvas: #FFFFFF;
+  --text-main: #000000;
+  --text-muted: #666666;
+  --stroke-outline: rgba(0, 0, 0, 0.85);
+  --cursor-color: #000000;
 }
 
 * {
@@ -16,56 +60,51 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
-  color: #111111;
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: 'Neue Haas Grotesk', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .font-display {
-  font-family: var(--font-syne), "Arial Black", sans-serif;
+  font-family: 'Right Grotesk', Impact, sans-serif;
+  letter-spacing: -0.018em;
 }
 
 .font-sans-clean {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Neue Haas Grotesk', system-ui, -apple-system, sans-serif;
 }
 
-.font-mono-tag {
-  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-/* Hairline Grid Utilities */
-.hairline-border {
-  border: 1px solid #111111;
-}
-
-.hairline-border-light {
-  border: 1px solid #E5E5E5;
-}
-
-/* Swiss Brutalist Text Stroke Utilities (wonjyou signature) */
-.stroke-text {
+/* Swiss Brutalist Text Stroke Utilities */
+.stroke {
   color: transparent;
-  -webkit-text-stroke: 1.5px #111111;
-  text-stroke: 1.5px #111111;
+  -webkit-text-stroke: 1.5px var(--stroke-outline);
+  text-stroke: 1.5px var(--stroke-outline);
 }
 
-.stroke-text-thick {
+.stroke-thick {
   color: transparent;
-  -webkit-text-stroke: 2.5px #111111;
-  text-stroke: 2.5px #111111;
+  -webkit-text-stroke: 2.5px var(--stroke-outline);
+  text-stroke: 2.5px var(--stroke-outline);
 }
 
-.stroke-text-white {
+.stroke-red {
   color: transparent;
-  -webkit-text-stroke: 1.5px #FFFFFF;
-  text-stroke: 1.5px #FFFFFF;
+  -webkit-text-stroke: 2px var(--red);
+  text-stroke: 2px var(--red);
 }
 
-.stroke-text-red {
-  color: transparent;
-  -webkit-text-stroke: 1.5px #F10000;
-  text-stroke: 1.5px #F10000;
+.col-red {
+  color: var(--red);
 }
 
 /* Hide default cursor on desktop when custom cursor is active */
@@ -106,23 +145,19 @@ html {
   will-change: transform;
 }
 
-/* Custom Swiss Brutalist Selection & Scrollbar */
+/* Custom Selection & Scrollbar */
 ::selection {
   background-color: #F10000;
   color: #FFFFFF;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #FBFBFB;
-  border-left: 1px solid #E5E5E5;
+  background: var(--bg-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #111111;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #F10000;
+  background: var(--red);
 }

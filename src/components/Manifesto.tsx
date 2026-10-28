@@ -1,61 +1,104 @@
 "use client";
 
 import React from "react";
-import { MANIFESTO_DATA } from "../data/portfolio";
-import { ArrowUpRight } from "lucide-react";
+
+interface ValueItem {
+  title: string;
+  description: string;
+  glyph: string;
+}
+
+const VALUES: ValueItem[] = [
+  {
+    title: "Love what you do",
+    description:
+      "I believe in having passion for one’s work. People can tell when something is made with love, care and attention. If you’re not proud of your work, then why do it.",
+    glyph: "/assets/64a206e89af1f6039e6ee166_glyph1b.svg",
+  },
+  {
+    title: "Never stop learning",
+    description:
+      "When we stop learning, we stop growing. Embrace curiosity as it is the best way to stay engaged and to keep your mind young.",
+    glyph: "/assets/64a2046b0a2512f14ce27ea0_glyph2_2x.webp",
+  },
+  {
+    title: "Speak the truth",
+    description:
+      "I believe it’s far better to be honest than to be indirect and kind. Sometimes the hard truths must be spoken, and I always strive to say what I mean. When you're honest, it breeds trust and creates clarity in communication with others.",
+    glyph: "/assets/64a20886a276228b93267260_glyph3.svg",
+  },
+  {
+    title: "Show, don’t tell",
+    description:
+      "I’ve found that showing is almost always better than telling. Showing stakeholders a prototype is far more powerful than a slide full of promises. I have always had a bias for action, and making and demonstrating are my way of storytelling.",
+    glyph: "/assets/64a204c1304c8842bf6b8596_glyph4.webp",
+  },
+  {
+    title: "Lead by example",
+    description:
+      "I strive to be a leader who models and embodies the qualities and behaviors they wish to see in others. Actions speak louder than words.",
+    glyph: "/assets/64a208870a2512f14ce6c426_glyph5.svg",
+  },
+  {
+    title: "Work smarter, not harder",
+    description:
+      "I am results-oriented, not effort-focused. Effort is important, but if you can get to the same results more efficiently, then at the end of day, that’s better. Finding ways to maximize output through scale and leverage is key to growing and succeeding in business and in life.",
+    glyph: "/assets/64a205166280f226d72afcf9_glyph6_2x.webp",
+  },
+];
 
 export const Manifesto: React.FC = () => {
   return (
-    <section id="manifesto" className="border-b border-[#111111] bg-[#FBFBFB] py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-[#111111] mb-12">
-          <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#F10000] font-bold mb-2">
-              <span>[ 01 / PRINCIPLES ]</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase text-[#111111] tracking-tight">
-              OPERATING MANIFESTO
-            </h2>
-          </div>
-          <p className="font-mono text-xs sm:text-sm text-[#666666] max-w-md uppercase">
-            Six non-negotiable standards that dictate how I design, architect, and deliver digital products.
-          </p>
+    <section id="loves" className="py-24 sm:py-36 px-6 sm:px-12 bg-[var(--bg-canvas)] transition-colors duration-300">
+      <div className="max-w-[1920px] mx-auto">
+        {/* Section Tag */}
+        <div className="text-sm font-medium text-[var(--text-muted)] mb-4">
+          My Values
         </div>
 
-        {/* 6 Grid Cards Won J You Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {MANIFESTO_DATA.map((item) => (
-            <div
-              key={item.number}
-              className="group relative p-6 sm:p-8 bg-[#FFFFFF] border border-[#111111] hover:border-[#F10000] transition-all duration-300 flex flex-col justify-between min-h-[300px] shadow-[4px_4px_0px_0px_#111111] hover:shadow-[4px_4px_0px_0px_#F10000] hover:-translate-y-1"
-            >
-              <div>
-                {/* Card Number & Tag */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#E5E5E5] mb-6">
-                  <span className="font-display text-2xl font-black text-[#111111] group-hover:text-[#F10000] transition-colors">
-                    {item.number}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#111111] bg-[#FBFBFB] text-[#111111] font-semibold">
-                    {item.tag}
-                  </span>
-                </div>
+        {/* Massive Display Title */}
+        <div className="mb-8">
+          <h2 className="font-['Right_Grotesk',Impact,sans-serif] text-5xl sm:text-7xl md:text-8xl lg:text-[10vw] font-bold uppercase tracking-tight leading-[0.85]">
+            <span className="text-[#F10000]">Live </span>
+            <span className="text-[var(--text-main)]">by </span>
+            <span className="stroke">Principles</span>
+          </h2>
+        </div>
 
-                {/* Card Title */}
-                <h3 className="font-display text-xl sm:text-2xl font-black uppercase text-[#111111] leading-tight mb-4 group-hover:text-[#F10000] transition-colors">
+        {/* Subtitle */}
+        <p className="text-xl sm:text-2xl md:text-3xl font-light text-[var(--text-muted)] max-w-2xl mb-16 sm:mb-24">
+          These values and principles drive everything that I do.
+        </p>
+
+        {/* Minimalist 2-Column Values List with Glyphs */}
+        <div className="divide-y divide-[var(--text-main)]/15 border-y border-[var(--text-main)]/15">
+          {VALUES.map((item, idx) => (
+            <div
+              key={idx}
+              className="py-10 sm:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-10 items-start group"
+            >
+              {/* Title */}
+              <div className="md:col-span-4">
+                <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-main)] group-hover:text-[#F10000] transition-colors">
                   {item.title}
                 </h3>
+              </div>
 
-                {/* Card Description */}
-                <p className="font-sans-clean text-sm text-[#555555] leading-relaxed">
+              {/* Description */}
+              <div className="md:col-span-6">
+                <p className="text-base sm:text-lg text-[var(--text-muted)] leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>
 
-              {/* Bottom Subtle Corner Accent */}
-              <div className="pt-6 mt-6 border-t border-[#E5E5E5] flex items-center justify-between font-mono text-[11px] text-[#888888]">
-                <span>HAMZAH IKHSAN &times; STUDIO</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#111111] group-hover:text-[#F10000] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              {/* Glyph Icon */}
+              <div className="md:col-span-2 flex justify-start md:justify-end items-center">
+                <img
+                  src={item.glyph}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all filter brightness-90 contrast-125"
+                />
               </div>
             </div>
           ))}

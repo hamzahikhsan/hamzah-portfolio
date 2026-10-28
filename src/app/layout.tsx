@@ -1,48 +1,28 @@
 import type { Metadata } from "next";
-import { Syne, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { SplashScreen } from "@/components/motion/SplashScreen";
 import { CustomCursor } from "@/components/motion/CustomCursor";
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-mono",
-  display: "swap",
-});
+import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Hamzah Ikhsan — Product Designer & Design-to-Code MVP Engineer",
+  title: "Hamzah Ikhsan — Rebel • Disruptor • Product Designer",
   description:
-    "Specializing in high-impact SaaS design, brutalist Swiss aesthetics, and rapid design-to-production sprints.",
+    "My passion is creating meaningful products for the world that solves real problems, delights users and exceeds expectations.",
   keywords: [
     "Hamzah Ikhsan",
     "Product Designer",
     "Design-to-Code",
     "MVP Engineer",
-    "Brutalist Portfolio",
+    "Won J You",
+    "Swiss Brutalism",
     "Next.js 16",
-    "Swiss Editorial Design",
   ],
   authors: [{ name: "Hamzah Ikhsan" }],
   openGraph: {
-    title: "Hamzah Ikhsan — Product Designer & Design-to-Code MVP Engineer",
+    title: "Hamzah Ikhsan — Rebel • Disruptor • Product Designer",
     description:
-      "Specializing in high-impact SaaS design, brutalist Swiss aesthetics, and rapid design-to-production sprints.",
+      "My passion is creating meaningful products for the world that solves real problems, delights users and exceeds expectations.",
     type: "website",
     locale: "en_US",
   },
@@ -54,14 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${syne.variable} ${inter.variable} ${mono.variable} scroll-smooth antialiased`}
-    >
-      <body className="min-h-screen bg-[#FFFFFF] text-[#111111] font-sans selection:bg-[#F10000] selection:text-white">
-        <SplashScreen />
-        <CustomCursor />
-        {children}
+    <html lang="en" className="dark scroll-smooth antialiased" suppressHydrationWarning>
+      <body className="min-h-screen bg-[var(--bg-canvas)] text-[var(--text-main)] font-sans-clean transition-colors duration-300">
+        <ThemeProvider>
+          <SplashScreen />
+          <CustomCursor />
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

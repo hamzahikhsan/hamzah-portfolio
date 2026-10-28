@@ -1,101 +1,57 @@
 "use client";
 
 import React from "react";
-import { ArrowDownRight, Terminal, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative border-b border-[#111111] bg-[#FFFFFF] overflow-hidden">
-      {/* Editorial Grid Background Lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#111111_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
-        {/* Top Tagline / Meta */}
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6 sm:mb-8 font-mono text-xs sm:text-sm uppercase tracking-wider text-[#666666]">
-          <span className="px-2.5 py-1 border border-[#111111] bg-[#111111] text-[#FFFFFF] font-bold">
-            JAKARTA, ID / UTC+7
-          </span>
-          <span className="flex items-center gap-1.5 text-[#111111]">
-            <Terminal className="w-4 h-4 text-[#F10000]" />
-            PRODUCT DESIGN &times; FRONTEND ENGINEERING
-          </span>
-          <span className="hidden sm:inline-block text-[#E5E5E5]">/</span>
-          <span className="hidden sm:inline-block text-[#666666]">
-            SPECIALIZING IN RAPID MVP SPRINTS
-          </span>
-        </div>
-
-        {/* Massive Won J You Style Main Headline */}
-        <div className="space-y-2 sm:space-y-4">
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#111111] uppercase leading-[0.92]">
-            SHIPPING <span className="text-[#F10000]">HIGH-IMPACT</span>
-            <br />
-            SAAS & DIGITAL
-            <br />
-            PRODUCTS AT SPEED.
-          </h1>
-        </div>
-
-        {/* Lead Narrative / Bio Statement */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-8">
-            <p className="font-sans-clean text-lg sm:text-xl md:text-2xl text-[#333333] leading-relaxed font-normal">
-              I am <strong className="font-bold text-[#111111]">Hamzah Ikhsan</strong> (Aniki).
-              A Product Designer and Design-to-Code MVP Engineer. I bridge the chasm between
-              visionary Figma prototypes and bulletproof Next.js production systems. 
-              Zero fluff. Zero generic templates. Built with Swiss editorial precision and measurable user outcomes.
-            </p>
-          </div>
-
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="p-4 border border-[#111111] bg-[#FBFBFB] space-y-2">
-              <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F10000] font-bold">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>CORE POSITIONING</span>
-              </div>
-              <p className="font-mono text-xs text-[#666666] leading-normal">
-                High-converting B2B SaaS interfaces, enterprise design systems, and rapid 10-day MVP builds.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="#work"
-                className="flex-1 inline-flex items-center justify-between px-5 py-3 border border-[#111111] bg-[#111111] text-[#FFFFFF] font-mono text-sm uppercase tracking-wider font-semibold hover:bg-[#F10000] hover:border-[#F10000] transition-colors"
-              >
-                <span>EXPLORE WORK</span>
-                <ArrowDownRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#manifesto"
-                className="inline-flex items-center px-5 py-3 border border-[#111111] bg-[#FFFFFF] text-[#111111] font-mono text-sm uppercase tracking-wider font-semibold hover:bg-[#FBFBFB] transition-colors"
-              >
-                <span>PHILOSOPHY</span>
-              </a>
-            </div>
+    <section className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-between pt-24 sm:pt-32 px-6 sm:px-12 pb-4 overflow-hidden select-none bg-[var(--bg-canvas)] transition-colors duration-300">
+      {/* Top Left: Descriptor Stack & Top Right: Mission Statement */}
+      <div className="relative z-30 max-w-[1920px] mx-auto w-full flex flex-col md:flex-row justify-between items-start gap-8 pointer-events-none">
+        {/* Left Column: Stacked Descriptors */}
+        <div className="pointer-events-auto">
+          <div className="space-y-1 sm:space-y-1.5 font-bold text-xl sm:text-2xl md:text-3xl text-[var(--text-main)] tracking-tight">
+            <div>Rebel</div>
+            <div>Entrepreneur</div>
+            <div>Disruptor</div>
+            <div>Designer</div>
           </div>
         </div>
 
-        {/* Quick Ticker / Strip */}
-        <div className="mt-12 sm:mt-16 pt-8 border-t border-[#E5E5E5] grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 font-mono text-xs uppercase">
-          <div>
-            <span className="text-[#888888] block">PRIMARY STACK</span>
-            <span className="text-[#111111] font-bold mt-1 block">Next.js 16 / TypeScript</span>
-          </div>
-          <div>
-            <span className="text-[#888888] block">DESIGN SYSTEM</span>
-            <span className="text-[#111111] font-bold mt-1 block">Tailwind v4 / Figma Dev Mode</span>
-          </div>
-          <div>
-            <span className="text-[#888888] block">PROVEN USABILITY</span>
-            <span className="text-[#F10000] font-bold mt-1 block">SEQ 6.1 / NPS 9.7</span>
-          </div>
-          <div>
-            <span className="text-[#888888] block">WORKSHOP REACH</span>
-            <span className="text-[#111111] font-bold mt-1 block">100+ Trainees Mentored</span>
-          </div>
+        {/* Right Column: Mission Statement */}
+        <div className="pointer-events-auto max-w-md md:text-right">
+          <p className="text-base sm:text-lg md:text-xl font-medium text-[var(--text-main)] leading-snug">
+            My passion is creating meaningful products for the world that solves real problems, delights users and exceeds expectations.
+          </p>
         </div>
       </div>
+
+      {/* Layer Z-10: Massive Red Nameplate Across the Bottom */}
+      <div className="relative z-10 w-full flex justify-center pointer-events-none mt-auto overflow-hidden">
+        <h1 className="font-['Right_Grotesk',Impact,sans-serif] text-[15vw] sm:text-[14.5vw] font-bold text-[#F10000] uppercase tracking-tighter leading-[0.8] whitespace-nowrap text-center">
+          HAMZAH IKHSAN
+        </h1>
+      </div>
+
+      {/* Layer Z-20: Cutout Portrait Standing in Front of the Name */}
+      <div className="absolute inset-x-0 bottom-0 top-16 sm:top-20 z-20 flex justify-center items-end pointer-events-none">
+        <div className="relative w-full max-w-4xl h-[75vh] sm:h-[85vh] lg:h-[92vh] flex items-end justify-center">
+          <img
+            src="/assets/64ab076614894808e85ea405_hero-alpha.webp"
+            alt="Portrait of Hamzah Ikhsan"
+            className="h-full w-auto max-w-full object-contain object-bottom filter contrast-105"
+          />
+        </div>
+      </div>
+
+      {/* Layer Z-25: Gradient Fade at Bottom to seamlessly blend torso into canvas */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-32 z-25 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, transparent 0%, var(--bg-canvas) 100%)",
+        }}
+      />
     </section>
   );
 };

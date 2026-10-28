@@ -6,43 +6,43 @@ import { Award } from "lucide-react";
 
 export const Metrics: React.FC = () => {
   return (
-    <section className="border-b border-[#111111] bg-[#FFFFFF] py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-28 px-6 sm:px-12 border-b border-[var(--text-main)]/15 bg-[var(--bg-canvas)]">
+      <div className="max-w-[1920px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-[#111111] mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-8 border-b border-[var(--text-main)]/15 mb-12">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#F10000] font-bold mb-2">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#F10000] font-bold mb-2">
               <span>[ 04 / PROVEN IMPACT ]</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-black uppercase text-[#111111] tracking-tight">
-              HARD METRICS & TRUST
+            <h2 className="font-['Right_Grotesk',Impact,sans-serif] text-4xl sm:text-6xl font-bold uppercase text-[var(--text-main)] tracking-tight">
+              HARD METRICS &amp; TRUST
             </h2>
           </div>
-          <p className="font-mono text-xs sm:text-sm text-[#666666] max-w-md uppercase">
+          <p className="text-xs sm:text-sm text-[var(--text-muted)] max-w-md uppercase">
             Quantifiable benchmarks from live deployments, training programs, and commercial digital assets.
           </p>
         </div>
 
         {/* 4 Large Metric Blocks */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {METRICS_DATA.map((item) => (
             <div
               key={item.label}
-              className="p-6 sm:p-8 bg-[#FBFBFB] border border-[#111111] shadow-[4px_4px_0px_0px_#111111] flex flex-col justify-between"
+              className="p-8 border border-[var(--text-main)]/15 flex flex-col justify-between hover:border-[#F10000] transition-colors group"
             >
               <div>
-                <span className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-[#F10000] block mb-2 tracking-tight">
+                <span className="font-['Right_Grotesk',Impact,sans-serif] text-5xl sm:text-6xl font-bold text-[#F10000] block mb-2 tracking-tight">
                   {item.value}
                 </span>
-                <h3 className="font-display text-lg font-black uppercase text-[#111111] mb-2">
+                <h3 className="text-xl font-bold uppercase text-[var(--text-main)] mb-2">
                   {item.label}
                 </h3>
-                <p className="font-sans-clean text-xs sm:text-sm text-[#555555] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
                   {item.detail}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-[#E5E5E5] flex items-center gap-1.5 font-mono text-[10px] uppercase text-[#888888]">
+              <div className="pt-6 mt-6 border-t border-[var(--text-main)]/15 flex items-center gap-1.5 text-[10px] uppercase text-[var(--text-muted)]">
                 <Award className="w-3.5 h-3.5 text-[#F10000]" />
                 <span>GROUND-TRUTH VERIFIED</span>
               </div>

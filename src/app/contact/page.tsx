@@ -1,23 +1,14 @@
+"use client";
+
 import React from "react";
-import type { Metadata } from "next";
-import { Navbar } from "../../components/Navbar";
-import { Footer } from "../../components/Footer";
+import { Footer } from "@/components/Footer";
 import {
   Mail,
   MessageSquare,
   ArrowUpRight,
-  Sparkles,
   Calendar,
-  CheckCircle2,
-  Code2,
   HelpCircle,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Contact & Inquiries — Hamzah Ikhsan",
-  description:
-    "Initiate your high-impact product sprint, book training workshops, or discuss digital agency collaborations with Hamzah Ikhsan.",
-};
 
 const FAQ_ITEMS = [
   {
@@ -40,155 +31,150 @@ const FAQ_ITEMS = [
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FFFFFF] text-[#111111]">
-      <Navbar />
+    <main className="min-h-screen bg-[var(--bg-canvas)] text-[var(--text-main)] pt-28 sm:pt-36 transition-colors duration-300">
+      {/* Chapter Header */}
+      <section className="px-6 sm:px-12 pb-16 sm:pb-24 border-b border-[var(--text-main)]/15">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-[#F10000] font-bold mb-6">
+            <span>[ CHAPTER 04 / INITIATE CONTACT ]</span>
+          </div>
 
-      <main className="flex-1">
-        {/* Chapter Header */}
-        <section className="border-b border-[#111111] bg-[#FFFFFF] py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-[#F10000] font-bold mb-4">
-              <span>[ CHAPTER 04 / INITIATE CONTACT ]</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-8">
+              <h1 className="font-['Right_Grotesk',Impact,sans-serif] text-5xl sm:text-7xl lg:text-8xl font-bold uppercase tracking-tight leading-[0.9]">
+                <span className="text-[var(--text-main)]">LET&apos;S BUILD </span>
+                <br />
+                <span className="stroke">SOMETHING </span>
+                <br />
+                <span className="text-[#F10000]">MEANINGFUL.</span>
+              </h1>
+              <p className="mt-8 text-xl sm:text-2xl text-[var(--text-muted)] font-light leading-relaxed max-w-2xl">
+                Whether you require an end-to-end 10-day MVP sprint, an enterprise design token system, or a high-converting editorial presence, my inbox is open.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-8">
-                <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight text-[#111111] leading-[0.9]">
-                  LET&apos;S BUILD
-                  <br />
-                  <span className="stroke-text text-transparent hover:text-[#F10000] transition-colors">
-                    SOMETHING
+            {/* Availability Radar Widget */}
+            <div className="lg:col-span-4 p-8 border border-[var(--text-main)]/15 space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-[var(--text-main)]/15">
+                <span className="text-xs uppercase tracking-wider text-[#F10000] font-bold flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F10000] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F10000]"></span>
                   </span>
-                  <br />
-                  <span className="text-[#F10000]">MEANINGFUL.</span>
-                </h1>
-                <p className="mt-6 font-sans-clean text-lg sm:text-2xl text-[#333333] leading-relaxed max-w-2xl">
-                  Whether you require an end-to-end 10-day MVP sprint, an enterprise design token system, or a high-converting editorial presence, my inbox is open.
+                  LIVE RADAR
+                </span>
+                <span className="text-[10px] uppercase text-[var(--text-muted)]">UTC+7 JAKARTA</span>
+              </div>
+
+              <div className="space-y-1">
+                <span className="font-['Right_Grotesk',Impact,sans-serif] text-lg font-bold uppercase text-[var(--text-main)] block">
+                  SPRINT SLOTS AVAILABLE
+                </span>
+                <p className="text-xs text-[var(--text-muted)]">
+                  Accepting selected client engagements for Q4 2026. Fast turnaround guaranteed.
                 </p>
               </div>
 
-              {/* Availability Radar Widget */}
-              <div className="lg:col-span-4 p-6 border border-[#111111] bg-[#FBFBFB] shadow-[4px_4px_0px_0px_#111111] space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-[#E5E5E5]">
-                  <span className="font-mono text-xs uppercase tracking-wider text-[#F10000] font-bold flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F10000] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F10000]"></span>
-                    </span>
-                    LIVE RADAR
-                  </span>
-                  <span className="font-mono text-[10px] uppercase text-[#888888]">UTC+7 JAKARTA</span>
-                </div>
-
-                <div className="space-y-1">
-                  <span className="font-display text-lg font-black uppercase text-[#111111] block">
-                    SPRINT SLOTS AVAILABLE
-                  </span>
-                  <p className="font-mono text-xs text-[#666666]">
-                    Accepting selected client engagements for Q4 2026. Fast turnaround guaranteed.
-                  </p>
-                </div>
-
-                <div className="pt-2 flex items-center gap-2 font-mono text-xs text-[#111111] font-semibold">
-                  <Calendar className="w-4 h-4 text-[#F10000]" />
-                  <span>Next available sprint intake: November 2026</span>
-                </div>
+              <div className="pt-2 flex items-center gap-2 text-xs text-[var(--text-main)] font-semibold">
+                <Calendar className="w-4 h-4 text-[#F10000]" />
+                <span>Next intake: November 2026</span>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Direct Channels Grid */}
-        <section className="border-b border-[#111111] bg-[#FBFBFB] py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {/* WhatsApp Direct */}
-              <a
-                href="https://wa.me/6281223324713"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-8 border border-[#111111] bg-[#FFFFFF] shadow-[6px_6px_0px_0px_#111111] hover:shadow-[6px_6px_0px_0px_#F10000] hover:border-[#F10000] transition-all flex flex-col justify-between min-h-[220px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-[#E5E5E5] mb-4">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F10000] font-bold">
-                      <MessageSquare className="w-4 h-4" />
-                      <span>INSTANT MESSAGING</span>
-                    </div>
-                    <span className="font-mono text-xs text-[#888888]">&lt; 15 min reply</span>
+      {/* Direct Channels Grid */}
+      <section className="py-20 sm:py-28 px-6 sm:px-12 border-b border-[var(--text-main)]/15">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            {/* WhatsApp Direct */}
+            <a
+              href="https://wa.me/6281223324713"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-8 sm:p-12 border border-[var(--text-main)]/15 hover:border-[#F10000] transition-colors flex flex-col justify-between min-h-[240px]"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-4 border-b border-[var(--text-main)]/15 mb-4">
+                  <div className="flex items-center gap-2 text-xs uppercase text-[#F10000] font-bold">
+                    <MessageSquare className="w-4 h-4" />
+                    <span>INSTANT MESSAGING</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase text-[#111111] group-hover:text-[#F10000] transition-colors mb-2">
-                    WHATSAPP CHAT
-                  </h3>
-                  <p className="font-mono text-sm text-[#555555]">
-                    +62 812-2332-4713 (Hamzah Ikhsan)
-                  </p>
+                  <span className="text-xs text-[var(--text-muted)]">&lt; 15 min reply</span>
                 </div>
-                <div className="pt-4 flex items-center justify-between font-mono text-xs text-[#111111] font-bold">
-                  <span>START CONVERSATION</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#F10000] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-              </a>
+                <h3 className="font-['Right_Grotesk',Impact,sans-serif] text-3xl sm:text-4xl font-bold uppercase text-[var(--text-main)] group-hover:text-[#F10000] transition-colors mb-2">
+                  WHATSAPP CHAT
+                </h3>
+                <p className="text-sm text-[var(--text-muted)]">
+                  +62 812-2332-4713 (Hamzah Ikhsan)
+                </p>
+              </div>
+              <div className="pt-6 flex items-center justify-between text-xs text-[var(--text-main)] font-bold">
+                <span>START CONVERSATION</span>
+                <ArrowUpRight className="w-4 h-4 text-[#F10000] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+            </a>
 
-              {/* Direct Email */}
-              <a
-                href="mailto:hamzah.student0106@gmail.com"
-                className="group p-8 border border-[#111111] bg-[#FFFFFF] shadow-[6px_6px_0px_0px_#111111] hover:shadow-[6px_6px_0px_0px_#F10000] hover:border-[#F10000] transition-all flex flex-col justify-between min-h-[220px]"
-              >
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-[#E5E5E5] mb-4">
-                    <div className="flex items-center gap-2 font-mono text-xs uppercase text-[#F10000] font-bold">
-                      <Mail className="w-4 h-4" />
-                      <span>FORMAL INQUIRY</span>
-                    </div>
-                    <span className="font-mono text-xs text-[#888888]">Direct Inbox</span>
+            {/* Direct Email */}
+            <a
+              href="mailto:hamzah.student0106@gmail.com"
+              className="group p-8 sm:p-12 border border-[var(--text-main)]/15 hover:border-[#F10000] transition-colors flex flex-col justify-between min-h-[240px]"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-4 border-b border-[var(--text-main)]/15 mb-4">
+                  <div className="flex items-center gap-2 text-xs uppercase text-[#F10000] font-bold">
+                    <Mail className="w-4 h-4" />
+                    <span>FORMAL INQUIRY</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-black uppercase text-[#111111] group-hover:text-[#F10000] transition-colors mb-2">
-                    ELECTRONIC MAIL
-                  </h3>
-                  <p className="font-mono text-sm text-[#555555]">
-                    hamzah.student0106@gmail.com
-                  </p>
+                  <span className="text-xs text-[var(--text-muted)]">Direct Inbox</span>
                 </div>
-                <div className="pt-4 flex items-center justify-between font-mono text-xs text-[#111111] font-bold">
-                  <span>COMPOSE MESSAGE</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#F10000] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-              </a>
+                <h3 className="font-['Right_Grotesk',Impact,sans-serif] text-3xl sm:text-4xl font-bold uppercase text-[var(--text-main)] group-hover:text-[#F10000] transition-colors mb-2">
+                  ELECTRONIC MAIL
+                </h3>
+                <p className="text-sm text-[var(--text-muted)]">
+                  hamzah.student0106@gmail.com
+                </p>
+              </div>
+              <div className="pt-6 flex items-center justify-between text-xs text-[var(--text-main)] font-bold">
+                <span>COMPOSE MESSAGE</span>
+                <ArrowUpRight className="w-4 h-4 text-[#F10000] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </div>
+            </a>
+          </div>
+
+          {/* Engagement FAQ */}
+          <div className="pt-16 border-t border-[var(--text-main)]/15">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#F10000] font-bold mb-3">
+              <HelpCircle className="w-4 h-4" />
+              <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
+            <h2 className="font-['Right_Grotesk',Impact,sans-serif] text-4xl sm:text-5xl font-bold uppercase text-[var(--text-main)] mb-12">
+              ENGAGEMENT ARCHITECTURE
+            </h2>
 
-            {/* Engagement FAQ */}
-            <div className="pt-12 border-t border-[#111111]">
-              <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#F10000] font-bold mb-3">
-                <HelpCircle className="w-4 h-4" />
-                <span>FREQUENTLY ASKED QUESTIONS</span>
-              </div>
-              <h2 className="font-display text-3xl sm:text-4xl font-black uppercase text-[#111111] mb-8">
-                ENGAGEMENT ARCHITECTURE
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {FAQ_ITEMS.map((item) => (
-                  <div
-                    key={item.q}
-                    className="p-6 border border-[#111111] bg-[#FFFFFF] space-y-3"
-                  >
-                    <h3 className="font-display text-lg font-black uppercase text-[#111111] flex items-start gap-2">
-                      <span className="text-[#F10000] font-mono text-sm">&bull;</span>
-                      <span>{item.q}</span>
-                    </h3>
-                    <p className="font-sans-clean text-sm text-[#555555] leading-relaxed pl-4">
-                      {item.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {FAQ_ITEMS.map((item) => (
+                <div
+                  key={item.q}
+                  className="p-8 border border-[var(--text-main)]/15 space-y-3"
+                >
+                  <h3 className="text-xl font-bold uppercase text-[var(--text-main)] flex items-start gap-2">
+                    <span className="text-[#F10000] font-mono text-sm">&bull;</span>
+                    <span>{item.q}</span>
+                  </h3>
+                  <p className="text-sm text-[var(--text-muted)] leading-relaxed pl-4">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
+      {/* Signature Footer */}
       <Footer />
-    </div>
+    </main>
   );
 }

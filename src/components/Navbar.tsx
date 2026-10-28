@@ -3,125 +3,111 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Menu, X } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "00. HOME" },
-    { href: "/work", label: "01. WORKS" },
-    { href: "/about", label: "02. ABOUT" },
-    { href: "/thoughts", label: "03. THOUGHTS" },
-    { href: "/contact", label: "04. CONTACT" },
+    { href: "/", label: "Life" },
+    { href: "/loves", label: "Loves" },
+    { href: "/work", label: "Works" },
+    { href: "/thoughts", label: "Thoughts" },
+    { href: "/contact", label: "Contact." },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#111111]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Brand Logo & Title */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              data-cursor-hover="true"
-              data-cursor-text="HAMZAH"
-              className="font-display text-xl sm:text-2xl font-black tracking-tight text-[#111111] hover:text-[#F10000] transition-colors"
+    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none transition-colors duration-300">
+      <div className="max-w-[1920px] mx-auto px-6 sm:px-12 py-6 sm:py-8 flex items-center justify-between">
+        {/* Brand Monogram Mark (Left) */}
+        <div className="pointer-events-auto">
+          <Link
+            href="/"
+            data-cursor-hover="true"
+            data-cursor-text="HOME"
+            className="group block"
+            aria-label="Hamzah Ikhsan Home"
+          >
+            {/* Wireframe geometric monogram */}
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-[var(--text-main)] group-hover:text-[#F10000] transition-colors"
             >
-              HAMZAH IKHSAN
-            </Link>
-            <span className="hidden sm:inline-block font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-[#111111] bg-[#111111] text-[#FFFFFF]">
-              DEV / DES
-            </span>
-          </div>
-
-          {/* Availability Status Badge */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1 border border-[#E5E5E5] bg-[#FBFBFB]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F10000] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F10000]"></span>
-            </span>
-            <span className="font-mono text-xs uppercase tracking-tight text-[#111111] font-medium">
-              AVAILABLE FOR SPRINT Q4 2026
-            </span>
-          </div>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  data-cursor-hover="true"
-                  className={`font-mono text-xs lg:text-sm uppercase tracking-wider transition-all relative py-1 ${
-                    isActive
-                      ? "text-[#F10000] font-bold"
-                      : "text-[#666666] hover:text-[#111111]"
-                  }`}
-                >
-                  {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#F10000]" />
-                  )}
-                </Link>
-              );
-            })}
-            <Link
-              href="/contact"
-              data-cursor-hover="true"
-              data-cursor-text="TALK"
-              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 border border-[#111111] bg-[#111111] text-[#FFFFFF] hover:bg-[#F10000] hover:border-[#F10000] transition-colors font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold shadow-[2px_2px_0px_0px_#111111]"
-            >
-              <span>TALK</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-          </nav>
-
-          {/* Mobile Hamburger Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <Link
-              href="/contact"
-              className="px-2.5 py-1 border border-[#111111] bg-[#111111] text-[#FFFFFF] font-mono text-xs uppercase tracking-wider font-semibold"
-            >
-              TALK
-            </Link>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 border border-[#111111] text-[#111111] hover:bg-[#FBFBFB] transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+              <rect x="2" y="2" width="36" height="36" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M12 10V30M28 10V30M12 20H28" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+          </Link>
         </div>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#111111] bg-[#FFFFFF] px-4 py-6 space-y-4">
+        {/* Desktop Navigation Links (Center) */}
+        <nav className="pointer-events-auto hidden md:flex items-center gap-8 lg:gap-12">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname?.startsWith(link.href);
+
             return (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block font-mono text-sm uppercase tracking-wider py-2 border-b border-[#E5E5E5] ${
-                  isActive ? "text-[#F10000] font-bold" : "text-[#111111]"
+                data-cursor-hover="true"
+                className={`text-sm lg:text-base font-medium tracking-normal transition-colors relative py-1 ${
+                  isActive
+                    ? "text-[#F10000] font-semibold"
+                    : "text-[var(--text-main)] opacity-70 hover:opacity-100 hover:text-[#F10000]"
                 }`}
               >
                 {link.label}
+                {isActive && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#F10000]" />
+                )}
               </Link>
             );
           })}
-          <div className="pt-2">
-            <div className="flex items-center gap-2 font-mono text-xs text-[#666666]">
-              <span className="w-2 h-2 rounded-full bg-[#F10000]"></span>
-              <span>AVAILABLE FOR SPRINT Q4 2026</span>
-            </div>
+        </nav>
+
+        {/* Theme Toggle Switch (Right) */}
+        <div className="pointer-events-auto flex items-center gap-4">
+          <ThemeToggle />
+
+          {/* Mobile hamburger toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-[var(--text-main)] hover:text-[#F10000] transition-colors"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="pointer-events-auto md:hidden fixed inset-0 top-[80px] bg-[var(--bg-canvas)] px-8 py-10 flex flex-col justify-between z-40 border-t border-[var(--text-main)]/10">
+          <div className="space-y-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-3xl font-bold tracking-tight text-[var(--text-main)] hover:text-[#F10000] transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="pt-8 border-t border-[var(--text-main)]/10">
+            <span className="text-xs uppercase tracking-widest text-[var(--text-muted)]">
+              Hamzah Ikhsan // Portfolio 2026
+            </span>
           </div>
         </div>
       )}

@@ -1,178 +1,84 @@
 "use client";
 
 import React from "react";
-import { ArrowUpRight, Mail, MessageSquare, ShoppingBag, Globe, Code2 } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-[#111111] text-[#FFFFFF] py-16 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main CTA */}
-        <div className="pb-16 border-b border-[#333333]">
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#F10000] font-bold mb-4">
-            <span>[ 05 / INITIATE CONTACT ]</span>
-          </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#FFFFFF] leading-[0.95]">
-            READY TO BUILD YOUR NEXT <span className="text-[#F10000]">HIGH-CONVERTING</span> PRODUCT?
-          </h2>
-          <p className="mt-6 font-sans-clean text-base sm:text-xl text-[#AAAAAA] max-w-2xl leading-relaxed">
-            Whether you need a full 10-day Design-to-Code MVP sprint, an enterprise design system, or a high-impact brutalist web presence, let&apos;s turn your product vision into production code.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="mailto:hamzah.student0106@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#F10000] text-[#FFFFFF] font-mono text-sm uppercase tracking-wider font-bold hover:bg-[#D90000] transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              <span>SEND DIRECT INQUIRY</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <a
-              href="https://wa.me/6281223324713"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#444444] bg-[#222222] text-[#FFFFFF] font-mono text-sm uppercase tracking-wider font-bold hover:bg-[#333333] hover:border-[#666666] transition-colors"
-            >
-              <MessageSquare className="w-4 h-4 text-[#F10000]" />
-              <span>WHATSAPP CHAT</span>
-            </a>
-          </div>
+    <footer className="py-20 sm:py-28 px-6 sm:px-12 bg-[var(--bg-canvas)] text-[var(--text-main)] transition-colors duration-300">
+      <div className="max-w-[1920px] mx-auto flex flex-col items-center justify-center text-center space-y-10">
+        {/* Artistic Handwritten Brush Script Signature */}
+        <div className="select-none">
+          <span
+            className="text-4xl sm:text-6xl md:text-7xl italic font-serif tracking-wide text-[var(--text-main)] hover:text-[#F10000] transition-colors duration-300"
+            style={{ fontFamily: "'Playfair Display', Georgia, cursive, serif" }}
+          >
+            Hamzah Ikhsan.
+          </span>
         </div>
 
-        {/* Directory & Social Links */}
-        <div className="pt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-5 space-y-3">
-            <span className="font-display text-2xl font-black tracking-tight text-[#FFFFFF]">
-              HAMZAH IKHSAN
-            </span>
-            <p className="font-mono text-xs text-[#888888] leading-normal uppercase">
-              Product Designer &bull; Design-to-Code MVP Engineer
-              <br />
-              Jakarta, Indonesia &bull; Global Remote Availability
-            </p>
-          </div>
+        {/* Minimalist Outlined Social Icons */}
+        <div className="flex items-center gap-6 text-[var(--text-main)]">
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/in/hamzahikhsan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+            className="p-2.5 rounded-full border border-[var(--text-main)]/20 hover:border-[#F10000] hover:text-[#F10000] transition-colors"
+          >
+            <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+            </svg>
+          </a>
 
-          <div className="md:col-span-7 flex flex-wrap gap-6 sm:gap-10 font-mono text-xs uppercase">
-            <div>
-              <span className="text-[#666666] block mb-3 font-bold">ECOSYSTEM</span>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="https://github.com/hamzahikhsan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-[#CCCCCC] hover:text-[#F10000] transition-colors"
-                  >
-                    <Code2 className="w-3.5 h-3.5" />
-                    <span>GITHUB</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://anikiisaan.gumroad.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-[#CCCCCC] hover:text-[#F10000] transition-colors"
-                  >
-                    <ShoppingBag className="w-3.5 h-3.5" />
-                    <span>GUMROAD</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://dribbble.com/hamzah_student"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-[#CCCCCC] hover:text-[#F10000] transition-colors"
-                  >
-                    <Globe className="w-3.5 h-3.5" />
-                    <span>DRIBBBLE</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Instagram */}
+          <a
+            href="https://instagram.com/hamzahikhsan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Profile"
+            className="p-2.5 rounded-full border border-[var(--text-main)]/20 hover:border-[#F10000] hover:text-[#F10000] transition-colors"
+          >
+            <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
 
-            <div>
-              <span className="text-[#666666] block mb-3 font-bold">DIRECTORY</span>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
-                    00. HOME
-                  </a>
-                </li>
-                <li>
-                  <a href="/work" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
-                    01. WORKS &amp; SERVICES
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
-                    02. ABOUT &amp; STORY
-                  </a>
-                </li>
-                <li>
-                  <a href="/thoughts" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
-                    03. THOUGHTS &amp; ESSAYS
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
-                    04. CONTACT
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {/* Dribbble */}
+          <a
+            href="https://dribbble.com/hamzah_student"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Dribbble Portfolio"
+            className="p-2.5 rounded-full border border-[var(--text-main)]/20 hover:border-[#F10000] hover:text-[#F10000] transition-colors"
+          >
+            <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
+              <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
+              <path d="M8.5 2.5a16.8 16.8 0 0 1 7.8 18.5" />
+            </svg>
+          </a>
 
-            <div>
-              <span className="text-[#666666] block mb-3 font-bold">PRODUCTION</span>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="https://maia-task-scribe.lovable.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#CCCCCC] hover:text-[#F10000] transition-colors flex items-center gap-1"
-                  >
-                    <span>MAIOFFICE APP</span>
-                    <ArrowUpRight className="w-3 h-3 text-[#F10000]" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/work"
-                    className="text-[#CCCCCC] hover:text-[#F10000] transition-colors"
-                  >
-                    LAJU POS SPEC
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/work"
-                    className="text-[#CCCCCC] hover:text-[#F10000] transition-colors"
-                  >
-                    VENDORA UI KIT
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <span className="text-[#666666] block mb-3 font-bold">INFRASTRUCTURE</span>
-              <ul className="space-y-1 font-mono text-[11px] text-[#888888]">
-                <li>BIZNET GIO VPS HOST</li>
-                <li>STATIC SSG EXPORT</li>
-                <li>NGINX 1.24 HARDENED</li>
-                <li>0MB NODE RUNTIME</li>
-              </ul>
-            </div>
-          </div>
+          {/* GitHub */}
+          <a
+            href="https://github.com/hamzahikhsan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Repositories"
+            className="p-2.5 rounded-full border border-[var(--text-main)]/20 hover:border-[#F10000] hover:text-[#F10000] transition-colors"
+          >
+            <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
+              <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+            </svg>
+          </a>
         </div>
 
-        {/* Bottom Colophon */}
-        <div className="mt-12 pt-8 border-t border-[#222222] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#666666] uppercase">
-          <span>&copy; {new Date().getFullYear()} HAMZAH IKHSAN. ALL RIGHTS RESERVED.</span>
-          <span>CRAFTED IN JAKARTA WITH SWISS BRUTALIST PRECISION.</span>
+        {/* Minimalist Copyright */}
+        <div className="pt-4 text-xs font-light text-[var(--text-muted)] tracking-wider">
+          &copy; {new Date().getFullYear()} Hamzah Ikhsan. All rights reserved.
         </div>
       </div>
     </footer>
