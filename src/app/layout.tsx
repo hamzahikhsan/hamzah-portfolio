@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Syne, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SplashScreen } from "@/components/motion/SplashScreen";
+import { CustomCursor } from "@/components/motion/CustomCursor";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -57,6 +59,8 @@ export default function RootLayout({
       className={`${syne.variable} ${inter.variable} ${mono.variable} scroll-smooth antialiased`}
     >
       <body className="min-h-screen bg-[#FFFFFF] text-[#111111] font-sans selection:bg-[#F10000] selection:text-white">
+        <SplashScreen />
+        <CustomCursor />
         {children}
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowDownRight, Terminal, Sparkles, Layers } from "lucide-react";
+import { ArrowDownRight, Terminal, Sparkles } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (

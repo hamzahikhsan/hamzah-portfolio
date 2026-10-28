@@ -94,6 +94,37 @@ export const Footer: React.FC = () => {
             </div>
 
             <div>
+              <span className="text-[#666666] block mb-3 font-bold">DIRECTORY</span>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
+                    00. HOME
+                  </a>
+                </li>
+                <li>
+                  <a href="/work" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
+                    01. WORKS &amp; SERVICES
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
+                    02. ABOUT &amp; STORY
+                  </a>
+                </li>
+                <li>
+                  <a href="/thoughts" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
+                    03. THOUGHTS &amp; ESSAYS
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-[#CCCCCC] hover:text-[#F10000] transition-colors">
+                    04. CONTACT
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
               <span className="text-[#666666] block mb-3 font-bold">PRODUCTION</span>
               <ul className="space-y-2">
                 <li>
@@ -109,7 +140,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href="#work"
+                    href="/work"
                     className="text-[#CCCCCC] hover:text-[#F10000] transition-colors"
                   >
                     LAJU POS SPEC
@@ -117,7 +148,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href="#work"
+                    href="/work"
                     className="text-[#CCCCCC] hover:text-[#F10000] transition-colors"
                   >
                     VENDORA UI KIT

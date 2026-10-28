@@ -43,6 +43,69 @@ html {
   border: 1px solid #E5E5E5;
 }
 
+/* Swiss Brutalist Text Stroke Utilities (wonjyou signature) */
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #111111;
+  text-stroke: 1.5px #111111;
+}
+
+.stroke-text-thick {
+  color: transparent;
+  -webkit-text-stroke: 2.5px #111111;
+  text-stroke: 2.5px #111111;
+}
+
+.stroke-text-white {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #FFFFFF;
+  text-stroke: 1.5px #FFFFFF;
+}
+
+.stroke-text-red {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #F10000;
+  text-stroke: 1.5px #F10000;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button {
+    cursor: none !important;
+  }
+}
+
+/* Infinite Marquee Ticker Keyframes */
+@keyframes ticker-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes ticker-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-ticker-left {
+  animation: ticker-left var(--ticker-duration, 35s) linear infinite;
+  will-change: transform;
+}
+
+.animate-ticker-right {
+  animation: ticker-right var(--ticker-duration, 35s) linear infinite;
+  will-change: transform;
+}
+
 /* Custom Swiss Brutalist Selection & Scrollbar */
 ::selection {
   background-color: #F10000;
