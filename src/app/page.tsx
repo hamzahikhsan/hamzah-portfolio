@@ -10,11 +10,11 @@ import { Footer } from "@/components/Footer";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 
 const CLIENT_LOGOS = [
-  { name: "Nike", src: "/assets/644fcfbbd7037704253366c8_client_nike.svg" },
-  { name: "Shopify", src: "/assets/644fd226685827376c9b31be_client_shopify.svg" },
-  { name: "Barnes & Noble", src: "/assets/644fcfbb8e78839d39366d71_client_bng.svg" },
-  { name: "New Line Cinema", src: "/assets/644fcfbb521b6d08df9d4367_client_newline.svg" },
-  { name: "Stash", src: "/assets/644fcfbbf6dc43093150536c_client_stash.svg" },
+  { name: "Nike", src: "/assets/644f815eb2061af0fcc6c5f6_Nike.svg" },
+  { name: "Shopify", src: "/assets/644f81b1be86de245a730b60_Shopify_logo.svg" },
+  { name: "Barnes & Noble", src: "/assets/644f95236b9b0121f30ccbca_bnglogo_1.svg" },
+  { name: "New Line Cinema", src: "/assets/644f95346b9b01b2350ccdd4_New_Line_Cinema_2011_WarnerMedia_Byline_1.svg" },
+  { name: "Stash", src: "/assets/644f954022bb32a62c538ed8_stash_1.svg" },
 ];
 
 const TESTIMONIALS = [
@@ -30,7 +30,7 @@ const TESTIMONIALS = [
       "Working with Hamzah felt like having a senior design architect and a full-stack engineer wrapped into one. He doesn't just draw mockups; he ships living software that delights users.",
     name: "Eli Gratz",
     title: "Head of Product, MAIA",
-    image: "/assets/644a3e1815309605ecf9a7aa_Loader_Img01.webp",
+    image: "/assets/64745f2cfa7c0d5993daebdd_Eli_Gratz.webp",
   },
 ];
 
@@ -137,14 +137,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
             <div className="relative aspect-[4/5] w-full overflow-hidden filter grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
               <img
-                src="/assets/644e5d21a2d528eb3e28c464_Chall_02.webp"
+                src="/assets/644e5d21181bfed3d9b220c9_Chall_02.webp"
                 alt="Studio process and exploration"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="relative aspect-[4/5] w-full overflow-hidden filter grayscale contrast-110 hover:grayscale-0 transition-all duration-500">
               <img
-                src="/assets/644e5d21c43b9dfb29598a3e_Chall_03.webp"
+                src="/assets/644e5d21a0c93f51888fd02d_Chall_03.webp"
                 alt="Field observations and prototyping"
                 className="w-full h-full object-cover"
               />
