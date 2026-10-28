@@ -31,18 +31,16 @@ function getSessionSeen() {
 }
 
 export const SplashScreen: React.FC<SplashScreenProps> = ({
-  forceShow = false,
+  forceShow = true,
   onComplete,
-  duration = 2000,
+  duration = 2400,
 }) => {
   const isMounted = useSyncExternalStore(emptySubscribe, getClientMounted, getServerMounted);
-  const alreadySeen = useSyncExternalStore(emptySubscribe, getSessionSeen, () => false);
-
-  const shouldSkip = !forceShow && alreadySeen;
+  const shouldSkip = false; // Always run splash screen for full cinematic brutalist entry
 
   const [progress, setProgress] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
-  const [isFinished, setIsFinished] = useState(shouldSkip);
+  const [isFinished, setIsFinished] = useState(false);
 
   // Notify onComplete immediately if skipped
   useEffect(() => {
@@ -76,9 +74,6 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({
         setProgress(100);
         setTimeout(() => {
           setIsExiting(true);
-          try {
-            sessionStorage.setItem("hamzah_splash_seen", "true");
-          } catch {}
         }, 300);
       }
     };
